@@ -16,17 +16,17 @@ export default function Home () {
 
     async function HandleAddNewExpense(formData) {
         if (editingUser) {
-            await editUserAction(editingUser.id, formData, "/");
+            await editUserAction(editingUser.id, formData, "https://next-supa-expense-crud.vercel.app/");
             setEditingUser(null);
         } else {
-            await addNewUserAction(formData, "/");
+            await addNewUserAction(formData, "https://next-supa-expense-crud.vercel.app/");
         }
         formData.set("username", "");
         HandleFetchUserData();
     }
 
     async function HandleDeleteExpenseData(currentUserId) {
-        await deleteUserAction(currentUserId, "/");
+        await deleteUserAction(currentUserId, "https://next-supa-expense-crud.vercel.app/");
         HandleFetchUserData();
     }
 
